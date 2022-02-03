@@ -4,7 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"start": "node dist/server.js",
-		"build": "npm install && tsc && ",
+		"build": "npm install && tsc",
 		"build:watch": "concurrently 'npm:tsc:watch' 'npm:server:watch'",
 		"tsc:watch": "tsc -w",
 		"server:watch": "nodemon dist/server.js"
