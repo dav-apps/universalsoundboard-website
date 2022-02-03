@@ -18,20 +18,17 @@ export class App {
 		})
 
 		router.get('/redirect', (req, res) => {
-			// TODO: Check the referer header for Stripe
-			console.log(req.headers.referer)
+			// Check the referer header for Stripe
+			if (
+				req.headers.referer == null
+				|| !req.headers.referer.startsWith("https://checkout.stripe.com")
+			) {
+				res.status(400).end()
+			}
 
 			// Get the necessary url params
 			let success = req.query.success == "true"
 			let plan = +req.query.plan
-
-			if (
-				success == null
-				|| plan == null
-			) {
-				res.status(400).end()
-				return
-			}
 
 			// Open UniversalSoundboard
 			res.redirect(`universalsoundboard://accountpage?success=${success}&plan=${plan}`)
