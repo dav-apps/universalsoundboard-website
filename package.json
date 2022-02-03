@@ -1,0 +1,19 @@
+{
+	"name": "universalsoundboard-website",
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"start": "node server.js",
+		"build:watch": "concurrently 'npm:tsc:watch' 'npm:server:watch'",
+		"tsc:watch": "tsc -w",
+		"server:watch": "nodemon dist/server.js"
+	},
+	"dependencies": {
+		"express": "^4.17.2",
+		"typescript": "^4.5.5"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.14",
+		"concurrently": "^7.0.0"
+	}
+}
