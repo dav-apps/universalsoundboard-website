@@ -3,7 +3,7 @@ const enDefaults = {
 	lang: "en",
 	upgradePage: {
 		header: "Thank you for upgrading!",
-		closeTabMessage: "You can close this tab"
+		closeTabMessage: "You can close this tab."
 	}
 }
 
@@ -23,7 +23,7 @@ const deDefaults = {
 	lang: "de",
 	upgradePage: {
 		header: "Vielen Dank!",
-		closeTabMessage: "Du kannst diesen Tab schließen"
+		closeTabMessage: "Du kannst diesen Tab schließen."
 	}
 }
 
@@ -48,7 +48,7 @@ const frDefaults = {
 	lang: "fr",
 	upgradePage: {
 		header: "Merci pour la mise à niveau!",
-		closeTabMessage: "Vous pouvez fermer cet onglet"
+		closeTabMessage: "Vous pouvez fermer cet onglet."
 	}
 }
 

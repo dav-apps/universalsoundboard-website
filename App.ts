@@ -29,6 +29,10 @@ export class App {
 		})
 
 		router.get('/upgrade', (req, res) => {
+			res.set("Accept-CH", "Sec-CH-Prefers-Color-Scheme")
+			res.set("Vary", "Sec-CH-Prefers-Color-Scheme")
+			res.set("Critical-CH", "Sec-CH-Prefers-Color-Scheme")
+
 			// Check the referer header for Stripe
 			if (
 				req.headers.referer == null
@@ -39,10 +43,12 @@ export class App {
 			}
 
 			let locale = getLocale(req.acceptsLanguages()[0])
+			const prefersColorScheme = req.get("sec-ch-prefers-color-scheme")
 
 			res.render("upgrade-page", {
 				lang: locale.lang,
-				locale: locale.upgradePage
+				locale: locale.upgradePage,
+				darkTheme: prefersColorScheme == "dark"
 			})
 		})
 
