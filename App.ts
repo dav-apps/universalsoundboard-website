@@ -24,6 +24,7 @@ export class App {
 				|| !req.headers.referer.startsWith("https://checkout.stripe.com")
 			) {
 				res.status(400).end()
+				return
 			}
 
 			// Get the necessary url params
