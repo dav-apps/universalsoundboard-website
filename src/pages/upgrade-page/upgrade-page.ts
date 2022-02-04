@@ -6,7 +6,5 @@ function main() {
 	let success = urlParams.get("success") == "true"
 	let plan = +urlParams.get("plan")
 
-	setTimeout(() => {
-		window.location.href = `universalsoundboard://upgrade?success=${success}&plan=${plan}`
-	}, 3000)
+	window.location.href = `universalsoundboard://upgrade?success=${success}&plan=${plan}`
 }
