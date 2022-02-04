@@ -2,6 +2,7 @@ import express from 'express'
 import ejs from 'ejs'
 import path from 'path'
 import url from 'url'
+import { getLocale } from './src/locales.js'
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 
@@ -37,8 +38,12 @@ export class App {
 				return
 			}
 
-			// Open UniversalSoundboard
-			res.render("upgrade-page")
+			let locale = getLocale(req.acceptsLanguages()[0])
+
+			res.render("upgrade-page", {
+				lang: locale.lang,
+				locale: locale.upgradePage
+			})
 		})
 
 		this.express.use('/', router)

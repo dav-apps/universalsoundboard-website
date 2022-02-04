@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= lang %>">
 	<head>
-		<title>Upgrade successful</title>
+		<title><%= locale.header %></title>
 		<base href="/">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,8 +23,8 @@
 					height="200">
 			</picture>
 
-			<h2 class="fw-light">Thank you for upgrading</h2>
-			<p class="fw-light fs-5">You can close this tab</p>
+			<h2 class="fw-light"><%= locale.header %></h2>
+			<p class="fw-light fs-5"><%= locale.closeTabMessage %></p>
 		</div>
 	</body>
 </html>
