@@ -7,10 +7,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
 
 		<script type="module" src="upgrade-page.ts" defer async></script>
 	</head>
 	<body>
-		<h1>Hello World</h1>
+		<div style="display: flex; width: 400px">
+			<picture>
+				<source srcset="/assets/images/usb-logo-dark.png?as=avif" type="image/avif" />
+				<source srcset="/assets/images/usb-logo-dark.png?as=webp" type="image/webp" />
+				<img
+					src="/assets/images/usb-logo-dark.png"
+					alt="UniversalSoundboard logo"
+					width="200"
+					height="200">
+			</picture>
+		</div>
 	</body>
 </html>
