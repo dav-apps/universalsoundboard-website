@@ -1,4 +1,9 @@
 import express from 'express'
+import ejs from 'ejs'
+import path from 'path'
+import url from 'url'
+
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 
 export class App {
 	public express
@@ -10,6 +15,13 @@ export class App {
 
 	private mountRoutes() {
 		const router = express.Router()
+
+		this.express.set("view engine", "html")
+		this.express.engine('html', ejs.renderFile)
+		this.express.set('views', path.join(__dirname, 'src/pages'))
+
+		router.use(express.static(path.join(__dirname, 'src/pages')))
+		router.use(express.json())
 
 		router.get('/', (req, res) => {
 			res.send('Nothing to see here')
@@ -25,12 +37,8 @@ export class App {
 				return
 			}
 
-			// Get the necessary url params
-			let success = req.query.success == "true"
-			let plan = +req.query.plan
-
 			// Open UniversalSoundboard
-			res.redirect(`universalsoundboard://upgrade?success=${success}&plan=${plan}`)
+			res.render("upgrade-page")
 		})
 
 		this.express.use('/', router)
