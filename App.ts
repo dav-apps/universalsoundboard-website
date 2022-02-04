@@ -1,6 +1,4 @@
 import express from 'express'
-import path from 'path'
-import url from 'url'
 
 export class App {
 	public express
@@ -17,7 +15,7 @@ export class App {
 			res.send('Nothing to see here')
 		})
 
-		router.get('/redirect', (req, res) => {
+		router.get('/upgrade', (req, res) => {
 			// Check the referer header for Stripe
 			if (
 				req.headers.referer == null
@@ -32,7 +30,7 @@ export class App {
 			let plan = +req.query.plan
 
 			// Open UniversalSoundboard
-			res.redirect(`universalsoundboard://accountpage?success=${success}&plan=${plan}`)
+			res.redirect(`universalsoundboard://upgrade?success=${success}&plan=${plan}`)
 		})
 
 		this.express.use('/', router)
