@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 	<head>
-		<title><%= locale.header %></title>
+		<title><%= success ? locale.header : locale.errorHeader %></title>
 		<base href="/">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,8 +36,8 @@
 			</picture>
 			<% } %>
 
-			<h2 class="fw-light"><%= locale.header %></h2>
-			<p class="fw-light fs-5"><%= locale.closeTabMessage %></p>
+			<h2 class="fw-light"><%= success ? locale.header : locale.errorHeader %></h2>
+			<p class="fw-light fs-5" style="max-width: 400px; text-align: center"><%= success ? locale.closeTabMessage : locale.errorMessage %></p>
 		</div>
 	</body>
 </html>

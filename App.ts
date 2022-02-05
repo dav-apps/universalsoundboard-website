@@ -44,11 +44,13 @@ export class App {
 
 			let locale = getLocale(req.acceptsLanguages()[0])
 			const prefersColorScheme = req.get("sec-ch-prefers-color-scheme")
+			let success = req.query.success == "true"
 
 			res.render("upgrade-page", {
 				lang: locale.lang,
 				locale: locale.upgradePage,
-				darkTheme: prefersColorScheme == "dark"
+				darkTheme: prefersColorScheme == "dark",
+				success
 			})
 		})
 

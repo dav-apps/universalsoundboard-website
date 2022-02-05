@@ -3,6 +3,8 @@ const enDefaults = {
 	lang: "en",
 	upgradePage: {
 		header: "Thank you for upgrading!",
+		errorHeader: "An error occured",
+		errorMessage: "There was an error while processing your payment. Please try it again.",
 		closeTabMessage: "You can close this tab."
 	}
 }
@@ -23,6 +25,8 @@ const deDefaults = {
 	lang: "de",
 	upgradePage: {
 		header: "Vielen Dank!",
+		errorHeader: "Ein Fehler ist aufgetreten",
+		errorMessage: "Es gab einen Fehler beim Bearbeiten deiner Zahlung. Bitte versuche es nochmal.",
 		closeTabMessage: "Du kannst diesen Tab schließen."
 	}
 }
@@ -48,6 +52,8 @@ const frDefaults = {
 	lang: "fr",
 	upgradePage: {
 		header: "Merci pour la mise à niveau!",
+		errorHeader: "Une erreur est survenue",
+		errorMessage: "Il y a eu une erreur lors du traitement de ton paiement. Merci de réessayer.",
 		closeTabMessage: "Vous pouvez fermer cet onglet."
 	}
 }

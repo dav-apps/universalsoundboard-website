@@ -6,5 +6,7 @@ function main() {
 	let success = urlParams.get("success") == "true"
 	let plan = +urlParams.get("plan")
 
-	window.location.href = `universalsoundboard://upgrade?success=${success}&plan=${plan}`
+	if (success) {
+		window.location.href = `universalsoundboard://upgrade?plan=${plan}`
+	}
 }
