@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+	<head>
+		<title><%= success ? locale.header : locale.errorHeader %></title>
+		<base href="/" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+		/>
+		<% if (darkTheme) { %>
+		<link rel="stylesheet" href="sound-promotion-page.dark.scss" />
+		<% } %>
+
+		<script type="module" src="sound-promotion-page.ts" defer async></script>
+	</head>
+	<body>
+		<div class="d-flex flex-column align-items-center mt-3 mx-auto">
+			<% if (darkTheme) { %>
+			<picture>
+				<source
+					srcset="/assets/images/usb-logo.png?as=avif"
+					type="image/avif"
+				/>
+				<source
+					srcset="/assets/images/usb-logo.png?as=webp"
+					type="image/webp"
+				/>
+				<img
+					src="/assets/images/usb-logo.png"
+					alt="UniversalSoundboard logo"
+					width="200"
+					height="200"
+				/>
+			</picture>
+			<% } else { %>
+			<picture>
+				<source
+					srcset="/assets/images/usb-logo-dark.png?as=avif"
+					type="image/avif"
+				/>
+				<source
+					srcset="/assets/images/usb-logo-dark.png?as=webp"
+					type="image/webp"
+				/>
+				<img
+					src="/assets/images/usb-logo-dark.png"
+					alt="UniversalSoundboard logo"
+					width="200"
+					height="200"
+				/>
+			</picture>
+			<% } %>
+
+			<h2 class="fw-light">
+				<%= success ? locale.header : locale.errorHeader %>
+			</h2>
+
+			<% if (success) { %>
+			<p class="fw-light fs-5">
+				<%= locale.description %>
+			</p>
+			<% } %>
+
+			<p class="fw-light fs-6">
+				<%= success ? locale.closeTabMessage : locale.errorMessage %>
+			</p>
+		</div>
+	</body>
+</html>

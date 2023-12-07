@@ -4,7 +4,17 @@ const enDefaults = {
 	upgradePage: {
 		header: "Thank you for upgrading!",
 		errorHeader: "An error occured",
-		errorMessage: "There was an error while processing your payment. Please try it again.",
+		errorMessage:
+			"There was an error while processing your payment. Please try it again.",
+		closeTabMessage: "You can close this tab."
+	},
+	soundPromotionPage: {
+		header: "Thank you!",
+		description:
+			'Your sound will be listed under "Sounds of the day" starting tomorrow.',
+		errorHeader: "An error occured",
+		errorMessage:
+			"There was an error while processing your payment. Please try it again.",
 		closeTabMessage: "You can close this tab."
 	}
 }
@@ -26,7 +36,17 @@ const deDefaults = {
 	upgradePage: {
 		header: "Vielen Dank!",
 		errorHeader: "Ein Fehler ist aufgetreten",
-		errorMessage: "Es gab einen Fehler beim Bearbeiten deiner Zahlung. Bitte versuche es nochmal.",
+		errorMessage:
+			"Es gab einen Fehler beim Bearbeiten deiner Zahlung. Bitte versuche es nochmal.",
+		closeTabMessage: "Du kannst diesen Tab schließen."
+	},
+	soundPromotionPage: {
+		header: "Vielen Dank!",
+		description:
+			'Dein Sound wird ab morgen unter "Sounds des Tages" gelistet.',
+		errorHeader: "Ein Fehler ist aufgetreten",
+		errorMessage:
+			"Es gab einen Fehler beim Bearbeiten deiner Zahlung. Bitte versuche es nochmal.",
 		closeTabMessage: "Du kannst diesen Tab schließen."
 	}
 }
@@ -53,7 +73,16 @@ const frDefaults = {
 	upgradePage: {
 		header: "Merci pour la mise à niveau!",
 		errorHeader: "Une erreur est survenue",
-		errorMessage: "Il y a eu une erreur lors du traitement de ton paiement. Merci de réessayer.",
+		errorMessage:
+			"Une erreur est survenue lors du traitement de votre paiement. Merci de réessayer.",
+		closeTabMessage: "Vous pouvez fermer cet onglet."
+	},
+	soundPromotionPage: {
+		header: "Merci!",
+		description: 'Votre son sera listé dès demain sous "Sons du jour".',
+		errorHeader: "Une erreur est survenue",
+		errorMessage:
+			"Une erreur est survenue lors du traitement de votre paiement. Merci de réessayer.",
 		closeTabMessage: "Vous pouvez fermer cet onglet."
 	}
 }
