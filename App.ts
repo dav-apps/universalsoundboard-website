@@ -25,7 +25,7 @@ export class App {
 		router.use(express.json())
 
 		router.get("/", (req, res) => {
-			res.send("Nothing to see here")
+			res.redirect("https://dav-apps.tech")
 		})
 
 		router.get("/upgrade", (req, res) => {
