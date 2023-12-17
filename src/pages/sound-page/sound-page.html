@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+	<head>
+		<title>UniversalSoundboard</title>
+		<base href="/" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="sound-page.scss" />
+		<% if (darkTheme) { %>
+		<link rel="stylesheet" href="sound-page.dark.scss" />
+		<% } %>
+
+		<script
+			type="module"
+			src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"
+		></script>
+		<script type="module" src="sound-page.ts" defer async></script>
+	</head>
+	<body>
+		<div class="d-flex flex-column align-items-center mt-3 mx-auto">
+			<% if (darkTheme) { %>
+			<picture>
+				<source
+					srcset="/assets/images/usb-logo.png?as=avif"
+					type="image/avif"
+				/>
+				<source
+					srcset="/assets/images/usb-logo.png?as=webp"
+					type="image/webp"
+				/>
+				<img
+					src="/assets/images/usb-logo.png"
+					alt="UniversalSoundboard logo"
+					width="200"
+					height="200"
+				/>
+			</picture>
+			<% } else { %>
+			<picture>
+				<source
+					srcset="/assets/images/usb-logo-dark.png?as=avif"
+					type="image/avif"
+				/>
+				<source
+					srcset="/assets/images/usb-logo-dark.png?as=webp"
+					type="image/webp"
+				/>
+				<img
+					src="/assets/images/usb-logo-dark.png"
+					alt="UniversalSoundboard logo"
+					width="200"
+					height="200"
+				/>
+			</picture>
+			<% } %>
+
+			<h4>Opening UniversalSoundboard...</h4>
+
+			<p class="fw-light fs-5 mt-2 mb-4">
+				You haven't installed UniversalSoundboard yet?
+			</p>
+
+			<ms-store-badge
+				productid="9nblggh51005"
+				window-mode="pop up"
+				theme="auto"
+				language="de"
+				animation="on"
+			></ms-store-badge>
+		</div>
+	</body>
+</html>

@@ -24,10 +24,6 @@ export class App {
 		router.use(express.static(path.join(__dirname, "src/pages")))
 		router.use(express.json())
 
-		router.get("/", (req, res) => {
-			res.redirect("https://dav-apps.tech")
-		})
-
 		router.get("/upgrade", (req, res) => {
 			res.set("Accept-CH", "Sec-CH-Prefers-Color-Scheme")
 			res.set("Vary", "Sec-CH-Prefers-Color-Scheme")
@@ -60,6 +56,24 @@ export class App {
 				darkTheme: prefersColorScheme == "dark",
 				success
 			})
+		})
+
+		router.get("/sound/:uuid", (req, res) => {
+			res.set("Accept-CH", "Sec-CH-Prefers-Color-Scheme")
+			res.set("Vary", "Sec-CH-Prefers-Color-Scheme")
+			res.set("Critical-CH", "Sec-CH-Prefers-Color-Scheme")
+
+			let locale = getLocale(req.acceptsLanguages()[0])
+			const prefersColorScheme = req.get("sec-ch-prefers-color-scheme")
+
+			res.render("sound-page/sound-page.html", {
+				lang: locale.lang,
+				darkTheme: prefersColorScheme == "dark"
+			})
+		})
+
+		router.use((req, res) => {
+			res.redirect("https://dav-apps.tech")
 		})
 
 		this.express.use("/", router)
