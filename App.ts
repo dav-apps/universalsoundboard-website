@@ -68,6 +68,7 @@ export class App {
 
 			res.render("sound-page/sound-page.html", {
 				lang: locale.lang,
+				locale: locale.soundPage,
 				darkTheme: prefersColorScheme == "dark"
 			})
 		})

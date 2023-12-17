@@ -16,6 +16,10 @@ const enDefaults = {
 		errorMessage:
 			"There was an error while processing your payment. Please try it again.",
 		closeTabMessage: "You can close this tab."
+	},
+	soundPage: {
+		header: "Opening UniversalSoundboard...",
+		subhead: "You haven't installed UniversalSoundboard yet?"
 	}
 }
 
@@ -48,6 +52,10 @@ const deDefaults = {
 		errorMessage:
 			"Es gab einen Fehler beim Bearbeiten deiner Zahlung. Bitte versuche es nochmal.",
 		closeTabMessage: "Du kannst diesen Tab schließen."
+	},
+	soundPage: {
+		header: "UniversalSoundboard wird geöffnet...",
+		subhead: "Du hast UniversalSoundboard noch nicht installiert?"
 	}
 }
 
@@ -84,6 +92,10 @@ const frDefaults = {
 		errorMessage:
 			"Une erreur est survenue lors du traitement de votre paiement. Merci de réessayer.",
 		closeTabMessage: "Vous pouvez fermer cet onglet."
+	},
+	soundPage: {
+		header: "UniversalSoundboard est en train de s'ouvrir...",
+		subhead: "Vous n'avez pas encore installé UniversalSoundboard ?"
 	}
 }
 
